@@ -1,0 +1,27 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+
+# Runtime cache (gerado automaticamente, não commitar)
+.asset_cache.json
+.etf_relevance_cache.json
+
+# Environment
+.env
+
+# Node
+node_modules/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

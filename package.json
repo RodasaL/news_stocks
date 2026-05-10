@@ -1,0 +1,13 @@
+{
+  "name": "news-stocks",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n BACK,FRONT -c blue.bold,green.bold --kill-others-on-fail \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": ".venv\\Scripts\\python -m uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "setup": "node scripts/setup.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

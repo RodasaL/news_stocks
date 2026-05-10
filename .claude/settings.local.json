@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(..venvScriptspython -c ' *)",
+      "PowerShell(curl -s http://localhost:8000/api/asset/PLTR 2>&1)",
+      "Bash(npm install *)"
+    ]
+  }
+}

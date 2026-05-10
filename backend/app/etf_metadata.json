@@ -1,0 +1,288 @@
+{
+  "SPY": {
+    "ticker": "SPY",
+    "name": "SPDR S&P 500 ETF Trust",
+    "index": "S&P 500",
+    "type": "etf",
+    "description": "Tracks 500 large-cap US companies",
+    "asset_class": "Large-Cap US Equities",
+    "related_tickers": [
+      "VOO",
+      "IVV"
+    ],
+    "keywords": [
+      "S&P 500",
+      "large-cap",
+      "US equity",
+      "500 stocks"
+    ]
+  },
+  "QQQ": {
+    "ticker": "QQQ",
+    "name": "Invesco QQQ Trust",
+    "index": "NASDAQ-100",
+    "type": "etf",
+    "description": "Tracks 100 largest non-financial companies on NASDAQ",
+    "asset_class": "Large-Cap Growth / Tech",
+    "related_tickers": [
+      "XLK",
+      "VUG"
+    ],
+    "keywords": [
+      "NASDAQ-100",
+      "technology",
+      "growth",
+      "large-cap",
+      "non-financial"
+    ]
+  },
+  "IWM": {
+    "ticker": "IWM",
+    "name": "iShares Russell 2000 ETF",
+    "index": "Russell 2000",
+    "type": "etf",
+    "description": "Tracks 2000 small-cap US companies",
+    "asset_class": "Small-Cap US Equities",
+    "related_tickers": [
+      "VB",
+      "SCHA"
+    ],
+    "keywords": [
+      "Russell 2000",
+      "small-cap",
+      "US equity",
+      "2000 stocks"
+    ]
+  },
+  "VOO": {
+    "ticker": "VOO",
+    "name": "Vanguard S&P 500 ETF",
+    "index": "S&P 500",
+    "type": "etf",
+    "description": "Tracks 500 large-cap US companies",
+    "asset_class": "Large-Cap US Equities",
+    "related_tickers": [
+      "SPY",
+      "IVV"
+    ],
+    "keywords": [
+      "S&P 500",
+      "large-cap",
+      "US equity",
+      "500 stocks"
+    ]
+  },
+  "IVV": {
+    "ticker": "IVV",
+    "name": "iShares Core S&P 500 ETF",
+    "index": "S&P 500",
+    "type": "etf",
+    "description": "Tracks 500 large-cap US companies",
+    "asset_class": "Large-Cap US Equities",
+    "related_tickers": [
+      "SPY",
+      "VOO"
+    ],
+    "keywords": [
+      "S&P 500",
+      "large-cap",
+      "US equity",
+      "500 stocks"
+    ]
+  },
+  "EEM": {
+    "ticker": "EEM",
+    "name": "iShares MSCI Emerging Markets ETF",
+    "index": "MSCI Emerging Markets",
+    "type": "etf",
+    "description": "Tracks emerging market equities across developing countries",
+    "asset_class": "Emerging Markets Equities",
+    "related_tickers": [
+      "VWO",
+      "IEMG"
+    ],
+    "keywords": [
+      "emerging markets",
+      "MSCI",
+      "developing countries",
+      "international"
+    ]
+  },
+  "VTI": {
+    "ticker": "VTI",
+    "name": "Vanguard Total Stock Market ETF",
+    "index": "Total US Market",
+    "type": "etf",
+    "description": "Tracks entire US stock market including large, mid, and small-cap",
+    "asset_class": "Total US Market",
+    "related_tickers": [
+      "ITOT",
+      "SCHB"
+    ],
+    "keywords": [
+      "total market",
+      "broad market",
+      "US equity",
+      "diversified"
+    ]
+  },
+  "AGG": {
+    "ticker": "AGG",
+    "name": "iShares Core US Aggregate Bond ETF",
+    "index": "Bloomberg Aggregate Bond",
+    "type": "etf",
+    "description": "Tracks US bonds including Treasuries, mortgage-backed, corporate",
+    "asset_class": "Fixed Income",
+    "related_tickers": [
+      "BND",
+      "VCIT"
+    ],
+    "keywords": [
+      "bonds",
+      "aggregate bond",
+      "fixed income",
+      "Treasury"
+    ]
+  },
+  "GLD": {
+    "ticker": "GLD",
+    "name": "SPDR Gold Shares",
+    "index": "Gold Spot Price",
+    "type": "etf",
+    "description": "Tracks physical gold bullion",
+    "asset_class": "Commodities",
+    "related_tickers": [
+      "IAU",
+      "GLDM"
+    ],
+    "keywords": [
+      "gold",
+      "precious metals",
+      "commodity",
+      "bullion"
+    ]
+  },
+  "XLK": {
+    "ticker": "XLK",
+    "name": "Technology Select Sector SPDR",
+    "index": "Technology Sector (S&P 500)",
+    "type": "etf",
+    "description": "Tracks technology companies in the S&P 500",
+    "asset_class": "Technology Sector",
+    "related_tickers": [
+      "VGT",
+      "XLV"
+    ],
+    "keywords": [
+      "technology",
+      "software",
+      "semiconductors",
+      "IT services"
+    ]
+  },
+  "EQAC": {
+    "ticker": "EQAC",
+    "name": "Equinix European Tech ETF",
+    "index": "EuroStoxx Tech / European Technology",
+    "type": "etf",
+    "description": "Tracks technology and digital companies listed on European exchanges",
+    "asset_class": "European Technology Equities",
+    "related_tickers": [
+      "EQQQ",
+      "TECH"
+    ],
+    "keywords": [
+      "EQAC",
+      "EQQQ",
+      "European tech",
+      "european technology",
+      "EuroStoxx",
+      "tech europe"
+    ]
+  },
+  "EXSA": {
+    "ticker": "EXSA",
+    "name": "iShares STOXX Europe 600 ETF",
+    "index": "STOXX Europe 600",
+    "type": "etf",
+    "description": "Tracks 600 large, mid and small-cap European companies across 17 countries",
+    "asset_class": "European Equities",
+    "related_tickers": [
+      "VEUR",
+      "XESC"
+    ],
+    "keywords": [
+      "STOXX Europe 600",
+      "European equities",
+      "europe stocks",
+      "broad european"
+    ]
+  },
+  "EQQQ": {
+    "ticker": "EQQQ",
+    "name": "Invesco EQQQ Nasdaq 100 UCITS ETF",
+    "index": "Nasdaq 100 Index",
+    "type": "etf",
+    "description": "The Invesco EQQQ Nasdaq 100 UCITS ETF aims to track the performance of the Nasdaq 100 Index, providing exposure to 100 of the largest non-financial companies listed on the Nasdaq Stock Market. It offers European investors access to a portfolio heavily weighted towards US large-cap growth companies, primarily in the technology and innovative sectors.",
+    "asset_class": "US Large-Cap Growth Equities, Technology & Innovation Sector",
+    "related_tickers": [
+      "QQQ",
+      "EQQA",
+      "IUNI",
+      "CNDX"
+    ],
+    "keywords": [
+      "EQQQ",
+      "Invesco Nasdaq 100",
+      "Nasdaq 100 UCITS",
+      "Technology ETF Europe",
+      "US growth stocks",
+      "Tech sector performance",
+      "Large-cap growth"
+    ]
+  },
+  "IWQU": {
+    "ticker": "IWQU",
+    "name": "iShares MSCI World Quality Factor UCITS ETF",
+    "index": "MSCI World Sector Neutral Quality Index",
+    "type": "etf",
+    "description": "Seeks to track the performance of an index composed of developed market companies selected based on quality factor characteristics, such as high return on equity, stable earnings growth, and low financial leverage. Aims to provide exposure to companies with strong and sustainable business models.",
+    "asset_class": "Global Developed Market Quality Factor Equities",
+    "related_tickers": [
+      "XDEQ",
+      "QDEV",
+      "HMWD"
+    ],
+    "keywords": [
+      "IWQU",
+      "iShares quality ETF",
+      "MSCI World quality",
+      "Quality factor investing",
+      "Developed market quality stocks",
+      "UCITS quality ETF",
+      "Factor investing IWQU"
+    ]
+  },
+  "INRE": {
+    "ticker": "INRE",
+    "name": "Invesco Real Estate Select Income Fund",
+    "index": "Actively managed, does not track a specific index.",
+    "type": "etf",
+    "description": "An actively managed ETF seeking income and long-term capital appreciation by investing primarily in equity securities of U.S. real estate companies, including Real Estate Investment Trusts (REITs).",
+    "asset_class": "U.S. Real Estate Equity (REITs)",
+    "related_tickers": [
+      "VNQ",
+      "XLRE",
+      "SCHH"
+    ],
+    "keywords": [
+      "INRE ETF",
+      "Invesco Real Estate",
+      "REITs",
+      "Active Real Estate ETF",
+      "U.S. Real Estate Income",
+      "Real Estate Fund",
+      "Equity REITs"
+    ]
+  }
+}

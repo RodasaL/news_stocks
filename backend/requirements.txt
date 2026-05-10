@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+google-genai
+python-dotenv
+feedparser
+httpx
+python-multipart
+pydantic
