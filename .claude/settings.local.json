@@ -3,7 +3,11 @@
     "allow": [
       "Bash(..venvScriptspython -c ' *)",
       "PowerShell(curl -s http://localhost:8000/api/asset/PLTR 2>&1)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\Lourenço\\\\Documents\\\\runs\\\\news_stocks\" -Recurse -Force | Select-Object FullName | ForEach-Object { $_.FullName -replace [regex]::Escape\\(\"C:\\\\Users\\\\Lourenço\\\\Documents\\\\runs\\\\news_stocks\"\\), \".\" } | Sort-Object)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Lourenço\\\\Documents\\\\runs\\\\news_stocks\\\\backend\\\\app\" -Filter \"*.py\")",
+      "Bash(Select-Object Name)",
+      "Bash(npm --prefix c:/Users/Lourenço/Documents/runs/news_stocks/frontend install recharts)"
     ]
   }
 }

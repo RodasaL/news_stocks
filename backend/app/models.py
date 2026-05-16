@@ -23,3 +23,17 @@ class AssetInfo(BaseModel):
 
 class BatchRequest(BaseModel):
     symbols: List[str]
+
+
+class PortfolioTransaction(BaseModel):
+    date: str               # "YYYY-MM-DD"
+    symbol: str
+    quantity: float
+    price: float            # price per share in original currency
+    action: str = "BUY"
+    currency: str = "EUR"   # currency of price (EUR or USD)
+    total_eur: Optional[float] = None  # exact EUR cost from broker (most accurate)
+
+
+class PortfolioHistoryRequest(BaseModel):
+    transactions: List[PortfolioTransaction]

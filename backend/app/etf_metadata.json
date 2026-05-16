@@ -284,5 +284,28 @@
       "Real Estate Fund",
       "Equity REITs"
     ]
+  },
+  "VWCE": {
+    "ticker": "VWCE",
+    "name": "Vanguard FTSE All-World UCITS ETF Accumulating",
+    "index": "FTSE All-World Index",
+    "type": "etf",
+    "description": "Invests in a geographically diversified portfolio of global large, mid, and small-cap equities across developed and emerging markets, with dividends automatically reinvested. Aims to track the performance of the FTSE All-World Index.",
+    "asset_class": "Global Broad Market Equities",
+    "related_tickers": [
+      "VWRL",
+      "SSAC",
+      "IWDA",
+      "EMIM"
+    ],
+    "keywords": [
+      "VWCE ETF",
+      "Vanguard All-World",
+      "Global Equities ETF",
+      "Accumulating ETF",
+      "FTSE All-World",
+      "Passive Investing",
+      "Diversified Global Stocks"
+    ]
   }
 }
