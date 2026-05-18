@@ -19,6 +19,13 @@ news_cache = {
     "cache_duration": 30 * 60  # 30 minutes in seconds
 }
 
+# Cache Fear & Greed for 1 hour
+fng_cache = {
+    "data": None,
+    "timestamp": 0,
+    "cache_duration": 60 * 60
+}
+
 
 @router.get("/watchlist")
 def get_watchlist():
@@ -453,12 +460,63 @@ async def batch_etf_news(req: BatchRequest):
         # Get the single ETF news (uses cache automatically)
         etf_result = await get_etf_news(symbol)
         results[symbol] = etf_result
-    
+
     logger.info(f"[BATCH_ETF_NEWS] Processed {len(symbols)} ETFs, total items: {sum(r.get('count', 0) for r in results.values())}")
-    
+
     return {
         "symbols": symbols,
         "total_etfs": len(symbols),
         "total_items": sum(r.get('count', 0) for r in results.values()),
         "results": results
     }
+
+
+@router.get("/fear-greed")
+async def get_fear_and_greed():
+    now = time.time()
+    if fng_cache["data"] and (now - fng_cache["timestamp"]) < fng_cache["cache_duration"]:
+        return {**fng_cache["data"], "cached": True}
+
+    try:
+        async with httpx.AsyncClient(timeout=10, follow_redirects=True) as client:
+            r = await client.get(
+                "https://production.dataviz.cnn.io/index/fearandgreed/graphdata",
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+                    "Accept": "application/json, text/plain, */*",
+                    "Accept-Language": "en-US,en;q=0.9",
+                    "Accept-Encoding": "gzip, deflate, br",
+                    "Referer": "https://www.cnn.com/markets/fear-and-greed",
+                    "Origin": "https://www.cnn.com",
+                    "sec-ch-ua": '"Chromium";v="124", "Google Chrome";v="124"',
+                    "sec-ch-ua-mobile": "?0",
+                    "sec-ch-ua-platform": '"Windows"',
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                },
+            )
+            r.raise_for_status()
+            raw = r.json()
+    except Exception as e:
+        logger.warning(f"[FEAR_GREED] Fetch failed: {e}")
+        if fng_cache["data"]:
+            return {**fng_cache["data"], "cached": True, "stale": True}
+        return {"error": str(e)}
+
+    fng = raw.get("fear_and_greed", {})
+    data = {
+        "score": round(fng.get("score", 0), 1),
+        "rating": fng.get("rating", ""),
+        "previous_close": round(fng.get("previous_close", 0), 1),
+        "previous_1_week": round(fng.get("previous_1_week", 0), 1),
+        "previous_1_month": round(fng.get("previous_1_month", 0), 1),
+        "previous_1_year": round(fng.get("previous_1_year", 0), 1),
+        "timestamp": fng.get("timestamp", ""),
+        "cached": False,
+    }
+
+    fng_cache["data"] = {k: v for k, v in data.items() if k != "cached"}
+    fng_cache["timestamp"] = now
+
+    return data

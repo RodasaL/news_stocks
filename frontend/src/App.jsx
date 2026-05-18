@@ -87,6 +87,17 @@ export default function App() {
   const [assetTypes, setAssetTypes] = useState({})
   const [prices, setPrices] = useState({})
 
+  // ── Fear & Greed ──
+  const [fng, setFng] = useState(null)
+  const [fngOpen, setFngOpen] = useState(false)
+
+  useEffect(() => {
+    fetch('/api/fear-greed')
+      .then(r => r.json())
+      .then(d => { if (!d.error) setFng(d) })
+      .catch(() => {})
+  }, [])
+
   // ── Tab ──
   const [activeTab, setActiveTab] = useState('watchlist')
 
@@ -256,6 +267,14 @@ export default function App() {
   const today = new Date().toLocaleDateString('en-GB', {
     day: '2-digit', month: 'short', year: 'numeric',
   }).toUpperCase()
+
+  const fngCol = fng
+    ? fng.score >= 75 ? '#22c55e'
+    : fng.score >= 55 ? '#84cc16'
+    : fng.score >= 45 ? '#eab308'
+    : fng.score >= 25 ? '#f97316'
+    : '#ef4444'
+    : '#fff'
 
   return (
     <div className="container">
@@ -578,6 +597,40 @@ export default function App() {
             </>
           )}
         </div>
+      )}
+
+      {/* ── Fear & Greed sidebar ── */}
+      {fng && (
+        <>
+          <button
+            className={`fng-toggle${fngOpen ? ' hidden' : ''}`}
+            onClick={() => setFngOpen(true)}
+            aria-label="Open Fear & Greed index"
+          >
+            <span className="fng-toggle-label">State Of The Market</span>
+          </button>
+
+          <div
+            className={`fng-sidebar${fngOpen ? ' open' : ''}`}
+            onClick={() => setFngOpen(false)}
+            title="Click to close"
+          >
+            <div className="fng-info-panel">
+              <span className="fng-vind-score" style={{ color: fngCol }}>{fng.score}</span>
+              <span className="fng-vind-rating">{fng.rating}</span>
+              <span className="fng-vind-prev">prev {fng.previous_close}</span>
+            </div>
+            <div className="fng-bar-area">
+              <span className="fng-slab">Extreme Greed</span>
+              <div className="fng-vbar">
+                <div className="fng-vind" style={{ top: `${(1 - fng.score / 100) * 100}%` }}>
+                  <div className="fng-vind-dot" style={{ boxShadow: `0 0 10px 2px ${fngCol}66` }} />
+                </div>
+              </div>
+              <span className="fng-slab">Extreme Fear</span>
+            </div>
+          </div>
+        </>
       )}
     </div>
   )

@@ -56,6 +56,147 @@ header h1 {
   text-transform: uppercase;
 }
 
+/* ── Fear & Greed sidebar ── */
+.fng-toggle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 200px;
+  background: rgba(168, 85, 247, 0.07);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+  z-index: 52;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s, opacity 0.25s;
+}
+
+.fng-toggle:hover {
+  background: rgba(168, 85, 247, 0.18);
+}
+
+.fng-toggle.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fng-toggle-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #c084fc;
+  text-shadow: 0 0 8px #a855f7, 0 0 22px #7c3aed;
+  white-space: nowrap;
+}
+
+.fng-sidebar {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(110%);
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  z-index: 51;
+  background: rgba(11, 13, 24, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(255,255,255,0.09);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px 0 0 16px;
+  padding: 32px 28px 32px 28px;
+  cursor: pointer;
+}
+
+.fng-sidebar.open {
+  transform: translateY(-50%) translateX(0);
+}
+
+.fng-info-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.fng-vind-score {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.fng-vind-rating {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.fng-vind-prev {
+  font-size: 8px;
+  color: rgba(255,255,255,0.45);
+}
+
+.fng-bar-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.fng-slab {
+  font-size: 7.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.fng-vbar {
+  width: 32px;
+  height: 250px;
+  border-radius: 99px;
+  background: linear-gradient(to bottom,
+    #22c55e 0%,
+    #84cc16 25%,
+    #eab308 50%,
+    #f97316 75%,
+    #ef4444 100%
+  );
+  position: relative;
+  box-shadow: 0 0 32px rgba(0,0,0,0.6);
+}
+
+.fng-vind {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fng-vind-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid rgba(0,0,0,0.2);
+}
+
 /* ── Tab bar ── */
 .tab-bar {
   display: flex;
